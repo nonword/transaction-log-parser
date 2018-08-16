@@ -1,0 +1,52 @@
+{
+  "header": [
+    {
+      "length": 4,
+      "name": "magicString",
+      "type": "string"
+    },
+    {
+      "length": 1,
+      "name": "version"
+    },
+    {
+      "length": 4,
+      "name": "numberOfRecords",
+      "type": "uint32"
+    }
+  ],
+  "record": [
+    {
+      "name": "recordType",
+      "type": "enum",
+      "enum": [
+        "Debit",
+        "Credit",
+        "StartAutopay",
+        "EndAutopay"
+      ],
+      "length": 1
+    },
+    {
+      "name": "timestamp",
+      "type": "uint32",
+      "length": 4
+    },
+    {
+      "name": "userId",
+      "type": "uint64",
+      "length": 8
+    },
+    {
+      "name": "amount",
+      "type": "float64",
+      "length": 8,
+      "lookBehindConditionals": [
+        {
+          "property": "recordType",
+          "regexMatch": "^(Debit|Credit)$"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "transaction-log-parser",
+  "version": "1.0.0",
+  "description": "Simple app for parsing a binary log against a configurable schema and running queries against the result.",
+  "main": "parse.js",
+  "scripts": {
+    "parse": "node ./parse",
+    "test": "./node_modules/.bin/standard --env mocha && ./node_modules/.bin/mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nonword/transaction-log-parser.git"
+  },
+  "author": "@nonword",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nonword/transaction-log-parser/issues"
+  },
+  "homepage": "https://github.com/nonword/transaction-log-parser#readme",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
+    "standard": "^11.0.1"
+  },
+  "dependencies": {
+    "minimist": "^1.2.0"
+  },
+  "standard": {
+    "globals": [
+      "expect"
+    ]
+  }
+}
